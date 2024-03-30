@@ -1,0 +1,23 @@
+.btn {
+  position: relative;
+  font-family: "Quicksand", sans-serif;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  border-radius: 0;
+  outline: none;
+  padding: 9px 15px;
+  background: transparent;
+  border-width: 2px;
+  font-size: 14px;
+  font-weight: bold;
+  line-height: 1.42857143;
+  border-style: solid;
+  border-color: inherit;
+  -webkit-transition: all 0.5s;
+  -moz-transition: all 0.5s;
+  -ms-transition: all 0.5s;
+  -o-transition: all 0.5s;
+  transition: all 0.5s;
+  overflow: hidden;
+  display: block;
+}

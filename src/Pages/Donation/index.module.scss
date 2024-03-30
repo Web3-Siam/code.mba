@@ -1,0 +1,23 @@
+@import '../../scss/sections';
+
+.donation {
+    @extend .section;
+}
+
+.title {
+    @extend .title;
+}
+
+.text {
+    @extend .text;
+
+    font-size: 16px;
+
+    strong {
+        font-weight: 700;
+    }
+}
+
+.qrCode {
+    max-width: 100%;
+}

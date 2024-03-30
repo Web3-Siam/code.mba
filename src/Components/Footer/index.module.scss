@@ -1,0 +1,42 @@
+.footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 40px 40px;
+}
+
+.copyright {
+  p {
+    font-size: 16px;
+    font-weight: bold;
+    font-family: "Quicksand", sans-serif;
+    letter-spacing: 2px;
+    margin-bottom: 0;
+  }
+}
+
+.socials {
+  ul {
+    display: flex;
+    align-items: center;
+
+    li {
+      margin-right: 6px;
+
+      &:last-child {
+        margin-right: 0;
+      }
+    }
+  }
+
+  a {
+    color: #333;
+    font-size: 20px;
+    display: block;
+    position: relative;
+    width: 50px;
+    height: 30px;
+    text-align: center;
+    line-height: 30px;
+  }
+}

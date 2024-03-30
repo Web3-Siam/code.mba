@@ -1,0 +1,28 @@
+.section {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+}
+
+.title {
+  letter-spacing: 2px;
+  margin-bottom: 40px;
+  -webkit-backface-visibility: hidden;
+  -moz-backface-visibility: hidden;
+  -ms-backface-visibility: hidden;
+  position: relative;
+}
+
+.text {
+  color: #252525;
+  font-size: 20px;
+  line-height: 28px;
+  font-family: "Quicksand", sans-serif;
+  font-style: normal;
+  font-weight: normal;
+  -webkit-font-smoothing: antialiased;
+  -webkit-text-size-adjust: 100%;
+  overflow-x: hidden;
+  white-space: normal;
+  text-align: right;
+}

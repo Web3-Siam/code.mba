@@ -1,0 +1,40 @@
+.canvasBg {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100vw;
+  height: 100vh;
+  pointer-events: none;
+  opacity: 0.1;
+}
+
+.bg {
+  &Home {
+    background-color: #ffeb3b;
+    color: #252525;
+  }
+
+  &Hack {
+    background-color: #252525;
+    color: #ffffff;
+  }
+
+  &Cv {
+    background-color: #f44336;
+    color: #ffffff;
+  }
+
+  &Consulting {
+    background-color: #326394;
+    color: #ffffff;
+  }
+
+  &Dontation {
+    background-color: #dedede;
+    color: #252525;
+  }
+}
+
+.canvas {
+    
+}

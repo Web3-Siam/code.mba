@@ -1,0 +1,15 @@
+.app {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  background-color: #ffeb3b;
+}
+
+.main {
+  display: flex;
+  height: 100%;
+  align-items: center;
+  justify-content: flex-end;
+  padding: 0 40px;
+}

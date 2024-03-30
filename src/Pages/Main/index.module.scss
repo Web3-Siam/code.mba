@@ -1,0 +1,39 @@
+@import "../../scss/buttons";
+@import "../../scss/sections";
+
+.main {
+  @extend .section;
+}
+
+.title {
+  @extend .title;
+}
+
+.text {
+  @extend .text;
+
+  margin-bottom: 20px;
+}
+
+.buttons {
+  display: flex;
+  align-items: center;
+
+  li {
+    margin-right: 6px;
+
+    &:last-child {
+      margin-right: 0;
+    }
+
+    a {
+      @extend .btn !optional;
+
+      &.btnInverse {
+        background-color: #252525;
+        border-color: #252525;
+        color: #ffeb3b;
+      }
+    }
+  }
+}

@@ -1,0 +1,14 @@
+@import "../../scss/buttons";
+@import "../../scss/sections";
+
+.consulting {
+  @extend .section;
+}
+
+.title {
+  @extend .title;
+}
+
+.text {
+  @extend .text;
+}
