@@ -35,6 +35,7 @@ function CanvasBg({ page }) {
     function awdCanvasResize() {
       canvas.width = window.innerWidth;
       canvas.height = window.innerHeight;
+      console.log(window.clientWidth)
     }
 
     awdCanvasResize();

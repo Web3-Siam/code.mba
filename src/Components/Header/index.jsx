@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 
 import style from "./index.module.scss";
 
-function Header({page, handleClick}) {
+function Header({ isMenuOpen, handleMenu, page, handleClick }) {
   const [randomIcon, setRandomIcon] = useState("fa-eye");
   const randomIcons = ["fa-eye", "fa-times", "fa-clock-o"],
     maxRandomIcons = randomIcons.length;
@@ -13,9 +13,7 @@ function Header({page, handleClick}) {
 
   return (
     <header className={`${style.header} ${style[page]}`}>
-      <div
-        className={style.logo}
-      >
+      <div className={style.logo}>
         <h1>
           <i class="fa fa-code"></i>&nbsp;
           <span>
@@ -25,40 +23,30 @@ function Header({page, handleClick}) {
       </div>
 
       <button
+        className={`${style.dropdownButton} ${isMenuOpen ? style.opened : ''}`}
+        onClick={() => handleMenu(!isMenuOpen)}
       >
         <span></span>
         <span></span>
         <span></span>
       </button>
 
-      <nav
-        className={style.navigation}
-      >
+      <nav className={`${style.navigation} ${isMenuOpen ? style.show : ''}`}>
         <ul>
           <li className={style.main}>
-            <a onClick={() => handleClick('main')}>
-              main
-            </a>
+            <a onClick={() => {handleMenu(false); return handleClick("main")}}>main</a>
           </li>
           <li className={style.hack}>
-            <a onClick={() => handleClick('hack')}>
-              hack
-            </a>
+            <a onClick={() => {handleMenu(false); return handleClick("hack")}}>hack</a>
           </li>
           <li className={style.cv}>
-            <a onClick={() => handleClick('cv')}>
-              CV
-            </a>
+            <a onClick={() => {handleMenu(false); return handleClick("cv")}}>CV</a>
           </li>
           <li className={style.consulting}>
-            <a onClick={() => handleClick('consulting')}>
-              consulting
-            </a>
+            <a onClick={() => {handleMenu(false); return handleClick("consulting")}}>consulting</a>
           </li>
           <li className={style.donation}>
-            <a onClick={() => handleClick('donation')}>
-              donation
-            </a>
+            <a onClick={() => {handleMenu(false); return handleClick("donation")}}>donation</a>
           </li>
         </ul>
       </nav>

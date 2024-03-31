@@ -10,6 +10,24 @@
   animation: slideInHeader 1s 0.5s;
   animation-fill-mode: forwards;
 
+  @media screen and (max-width: 768px) {
+    padding: 30px 30px 0;
+  }
+  @media screen and (max-width: 420px) {
+    padding: 15px 15px 0;
+  }
+
+  &:after {
+    content: "";
+    display: block;
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100vh;
+    pointer-events: none;
+  }
+
   &.main li.main,
   &.hack li.hack,
   &.cv li.cv,
@@ -47,13 +65,22 @@
         -ms-transform: scale(0.5) rotate(-30deg);
         -o-transform: scale(0.5) rotate(-30deg);
         transform: scale(0.5) rotate(-30deg);
+
+        @media screen and (max-width: 768px) {
+          -webkit-transform: scale(0.5) rotate(-70deg);
+          -moz-transform: scale(0.5) rotate(-70deg);
+          -ms-transform: scale(0.5) rotate(-70deg);
+          -o-transform: scale(0.5) rotate(-70deg);
+          transform: scale(0.5) rotate(-70deg);
+        }
       }
     }
   }
 
   &.main,
   &.donation {
-    li a {
+    li a,
+    .dropdownButton span {
       &:before,
       &:after {
         background: #252525;
@@ -63,7 +90,8 @@
   &.hack,
   &.cv,
   &.consulting {
-    li a {
+    li a,
+    .dropdownButton span {
       &:before,
       &:after {
         background: #ffffff;
@@ -83,17 +111,160 @@
     letter-spacing: 0;
     margin-bottom: 0;
     transition: color 0.5s;
+
+    @media screen and (max-width: 991px) {
+      font-size: 38px;
+    }
+    @media screen and (max-width: 420px) {
+      font-size: 28px;
+    }
+  }
+}
+
+.dropdownButton {
+  display: none;
+  width: 28px;
+  height: 28px;
+  background: transparent;
+  border: 0;
+  cursor: pointer;
+  outline: none;
+  padding: 0;
+  z-index: 15;
+  position: relative;
+
+  @media screen and (max-width: 768px) {
+    display: block;
+    animation: slideInHeader 1s 0.5s;
+  }
+
+  &.opened {
+    span {
+      &:after {
+        width: 30px;
+      }
+
+      &:first-child {
+        &:after {
+          webkit-transform: translateX(1px) translateY(-2px) rotate(43deg);
+          -moz-transform: translateX(1px) translateY(-2px) rotate(43deg);
+          -ms-transform: translateX(1px) translateY(-2px) rotate(43deg);
+          -o-transform: translateX(1px) translateY(-2px) rotate(43deg);
+          transform: translateX(1px) translateY(-2px) rotate(43deg);
+        }
+      }
+      &:nth-child(2) {
+        &:after {
+          opacity: 0;
+        }
+      }
+      &:last-child {
+        &:after {
+          -webkit-transform: translateX(1px) translateY(2px) rotate(-43deg);
+          -moz-transform: translateX(1px) translateY(2px) rotate(-43deg);
+          -ms-transform: translateX(1px) translateY(2px) rotate(-43deg);
+          -o-transform: translateX(1px) translateY(2px) rotate(-43deg);
+          transform: translateX(1px) translateY(2px) rotate(-43deg);
+        }
+      }
+    }
+  }
+
+  span {
+    &:after {
+      content: "";
+      position: absolute;
+      left: 0;
+      display: block;
+      width: 24px;
+      height: 3px;
+      margin: 4px 2px;
+      -webkit-border-radius: 2px;
+      -moz-border-radius: 2px;
+      border-radius: 2px;
+      -webkit-transition: -webkit-transform 0.35s, background 0.35s,
+        opacity 0.35s;
+      -moz-transition: -moz-transform 0.35s, background 0.35s, opacity 0.35s,
+        width 0.35s;
+      -ms-transition: -ms-transform 0.35s, background 0.35s, opacity 0.35s,
+        width 0.35s;
+      -o-transition: -o-transform 0.35s, background 0.35s, opacity 0.35s,
+        width 0.35s;
+      transition: transform 0.35s, background 0.35s, opacity 0.35s, width 0.35s;
+      background-color: #252525;
+    }
+
+    &:first-child {
+      &:after {
+        top: 0;
+        -webkit-transform-origin: 0 50%;
+        -moz-transform-origin: 0 50%;
+        -ms-transform-origin: 0 50%;
+        -o-transform-origin: 0 50%;
+        transform-origin: 0 50%;
+      }
+    }
+    &:nth-child(2) {
+      &:after {
+        top: 8px;
+      }
+    }
+    &:last-child {
+      &:after {
+        top: 16px;
+        -webkit-transform-origin: 0 50%;
+        -moz-transform-origin: 0 50%;
+        -ms-transform-origin: 0 50%;
+        -o-transform-origin: 0 50%;
+        transform-origin: 0 50%;
+      }
+    }
   }
 }
 
 .navigation {
+  @media screen and (max-width: 768px) {
+    position: fixed;
+    left: 0;
+    top: -50vh;
+    width: 100%;
+    height: 100vh;
+    z-index: 10;
+    display: flex;
+    align-items: center;
+    transition: top 1s ease-out, opacity 1s ease-out;
+
+    opacity: 0;
+    pointer-events: none;
+  }
+
+  &.show {
+    @media screen and (max-width: 768px) {
+      top: 0vh;
+      opacity: 1;
+      pointer-events: auto;
+    }
+  }
+
   ul {
     display: flex;
     align-items: center;
 
+    @media screen and (max-width: 768px) {
+      flex-direction: column;
+      width: 100%;
+    }
+
     li {
       margin-right: 40px;
       position: relative;
+
+      @media screen and (max-width: 991px) {
+        margin-right: 18px;
+      }
+      @media screen and (max-width: 768px) {
+        margin-right: 0;
+      }
 
       &:last-child {
         margin-right: 0;
@@ -153,6 +324,15 @@
       line-height: 28px;
       z-index: 20;
 
+      @media screen and (max-width: 991px) {
+        font-size: 15px;
+        letter-spacing: 1px;
+      }
+      @media screen and (max-width: 991px) {
+        padding: 15px 0;
+        font-size: 24px;
+      }
+
       &:hover {
         &:before,
         &:after {
@@ -163,6 +343,14 @@
           -ms-transform: scale(0.5) rotate(-30deg);
           -o-transform: scale(0.5) rotate(-30deg);
           transform: scale(0.5) rotate(-30deg);
+
+          @media screen and (max-width: 768px) {
+            -webkit-transform: scale(0.5) rotate(-70deg);
+            -moz-transform: scale(0.5) rotate(-70deg);
+            -ms-transform: scale(0.5) rotate(-70deg);
+            -o-transform: scale(0.5) rotate(-70deg);
+            transform: scale(0.5) rotate(-70deg);
+          }
         }
       }
 
@@ -184,18 +372,40 @@
         -ms-transform: scale(1) rotate(-30deg);
         -o-transform: scale(1) rotate(-30deg);
         transform: scale(1) rotate(-30deg);
+
+        @media screen and (max-width: 768px) {
+          -webkit-transform: scale(0.5) rotate(0deg);
+          -moz-transform: scale(0.5) rotate(0deg);
+          -ms-transform: scale(0.5) rotate(0deg);
+          -o-transform: scale(0.5) rotate(0deg);
+          transform: scale(0.5) rotate(0deg);
+        }
       }
 
       &:before {
         top: 0;
         margin-left: -5px;
         left: 50%;
+
+        @media screen and (max-width: 768px) {
+          left: 0;
+          top: 50%;
+          right: auto;
+          margin-left: -40px;
+        }
       }
 
       &:after {
         bottom: 0;
         margin-right: -5px;
         right: 50%;
+
+        @media screen and (max-width: 768px) {
+          right: 0;
+          top: 50%;
+          left: auto;
+          margin-right: -40px;
+        }
       }
     }
   }
