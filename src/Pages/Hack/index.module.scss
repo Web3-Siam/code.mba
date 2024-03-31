@@ -1,8 +1,12 @@
 @import "../../scss/buttons";
 @import "../../scss/sections";
+@import "../../scss/animation";
 
 .hack {
   @extend .section;
+  opacity: 0;
+  animation: fadeIn 1s 0s;
+  animation-fill-mode: forwards;
 }
 
 .title {
@@ -19,6 +23,16 @@
 
     &:last-child {
       margin-bottom: 0;
+    }
+
+    a {
+      @extend .btn;
+
+      &:hover {
+        background-color: #ffffff;
+        border-color: #ffffff;
+        color: #252525;
+      }
     }
   }
 }

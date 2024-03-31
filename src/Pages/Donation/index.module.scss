@@ -1,23 +1,27 @@
-@import '../../scss/sections';
+@import "../../scss/sections";
+@import "../../scss/animation";
 
 .donation {
-    @extend .section;
+  @extend .section;
+  opacity: 0;
+  animation: fadeIn 1s 0s;
+  animation-fill-mode: forwards;
 }
 
 .title {
-    @extend .title;
+  @extend .title;
 }
 
 .text {
-    @extend .text;
+  @extend .text;
 
-    font-size: 16px;
+  font-size: 16px;
 
-    strong {
-        font-weight: 700;
-    }
+  strong {
+    font-weight: 700;
+  }
 }
 
 .qrCode {
-    max-width: 100%;
+  max-width: 100%;
 }

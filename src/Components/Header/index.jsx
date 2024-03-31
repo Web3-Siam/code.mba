@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 
 import style from "./index.module.scss";
 
-function Header() {
+function Header({page, handleClick}) {
   const [randomIcon, setRandomIcon] = useState("fa-eye");
   const randomIcons = ["fa-eye", "fa-times", "fa-clock-o"],
     maxRandomIcons = randomIcons.length;
@@ -12,12 +12,9 @@ function Header() {
   }, []);
 
   return (
-    <header className={style.header}>
+    <header className={`${style.header} ${style[page]}`}>
       <div
-        id="awd-site-logo"
         className={style.logo}
-        data-animation="fadeInDown"
-        data-animation-delay="500"
       >
         <h1>
           <i class="fa fa-code"></i>&nbsp;
@@ -28,10 +25,6 @@ function Header() {
       </div>
 
       <button
-        class="menu-toggle animated"
-        data-animation="fadeInDown"
-        data-animation-delay="500"
-        data-role="toggle"
       >
         <span></span>
         <span></span>
@@ -39,34 +32,31 @@ function Header() {
       </button>
 
       <nav
-        id="awd-site-nav"
         className={style.navigation}
-        data-animation="fadeInDown"
-        data-animation-delay="500"
       >
         <ul>
-          <li>
-            <a href="#" data-slide="home" class="active">
+          <li className={style.main}>
+            <a onClick={() => handleClick('main')}>
               main
             </a>
           </li>
-          <li>
-            <a href="#" data-slide="subscribe">
+          <li className={style.hack}>
+            <a onClick={() => handleClick('hack')}>
               hack
             </a>
           </li>
-          <li>
-            <a href="#" data-slide="about">
+          <li className={style.cv}>
+            <a onClick={() => handleClick('cv')}>
               CV
             </a>
           </li>
-          <li>
-            <a href="#" data-slide="services">
+          <li className={style.consulting}>
+            <a onClick={() => handleClick('consulting')}>
               consulting
             </a>
           </li>
-          <li>
-            <a href="#" data-slide="contact">
+          <li className={style.donation}>
+            <a onClick={() => handleClick('donation')}>
               donation
             </a>
           </li>
