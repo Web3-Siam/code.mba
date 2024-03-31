@@ -146,7 +146,7 @@
 
       &:first-child {
         &:after {
-          webkit-transform: translateX(1px) translateY(-2px) rotate(43deg);
+          -webkit-transform: translateX(1px) translateY(-2px) rotate(43deg);
           -moz-transform: translateX(1px) translateY(-2px) rotate(43deg);
           -ms-transform: translateX(1px) translateY(-2px) rotate(43deg);
           -o-transform: translateX(1px) translateY(-2px) rotate(43deg);
@@ -328,7 +328,7 @@
         font-size: 15px;
         letter-spacing: 1px;
       }
-      @media screen and (max-width: 991px) {
+      @media screen and (max-width: 768px) {
         padding: 15px 0;
         font-size: 24px;
       }

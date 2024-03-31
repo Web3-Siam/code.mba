@@ -70,8 +70,10 @@
   }
 
   &.hidden {
-    opacity: 0;
-    pointer-events: none;
-    transition-delay: 0s;
+    @media screen and (max-width: 768px) {
+      opacity: 0;
+      pointer-events: none;
+      transition-delay: 0s;
+    }
   }
 }

@@ -15,7 +15,7 @@ function Header({ isMenuOpen, handleMenu, page, handleClick }) {
     <header className={`${style.header} ${style[page]}`}>
       <div className={style.logo}>
         <h1>
-          <i class="fa fa-code"></i>&nbsp;
+          <i className="fa fa-code"></i>&nbsp;
           <span>
             code <i className={`fa ${randomIcon}`}></i> mba
           </span>
