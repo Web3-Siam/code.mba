@@ -5,8 +5,6 @@ function CV() {
     <div className={style.cv}>
       <h2
         className={style.title}
-        data-animation="fadeIn"
-        data-animation-delay="60"
       >
         my CV
       </h2>
@@ -15,9 +13,6 @@ function CV() {
         href="assets/docs/alex_CV.pdf"
         target="_blank"
         className={style.button}
-        data-animation="fadeIn"
-        data-animation-delay="60"
-        data-slide="subscribe"
       >
         PDF file
       </a>

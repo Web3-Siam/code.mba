@@ -8,7 +8,7 @@ import Consulting from "./Pages/Consulting";
 import Donation from "./Pages/Donation";
 
 import CanvasBg from "./Components/CanvasBg";
-import Header from './Components/Header';
+import Header from "./Components/Header";
 import Footer from "./Components/Footer";
 
 function App() {
@@ -19,18 +19,22 @@ function App() {
     hack: <Hack />,
     cv: <CV />,
     consulting: <Consulting />,
-    dontation: <Donation />,
+    donation: <Donation />,
+  };
+
+  const handleChange = (newPage) => {
+    setPage(newPage);
   };
 
   return (
-    <div className={style.app}>
-      <CanvasBg />
+    <div className={`${style.app} ${style[page]}`}>
+      <CanvasBg page={page} />
 
-      <Header />
+      <Header page={page} handleClick={handleChange} />
 
-      <main className={style.main}>{pages[page]}</main>
+      <main className={style.mainSection}>{pages[page]}</main>
 
-      <Footer />
+      <Footer page={page} />
     </div>
   );
 }

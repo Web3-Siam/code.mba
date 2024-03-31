@@ -5,15 +5,11 @@ function Main() {
     <div className={style.main}>
       <h2
         className={style.title}
-        data-animation="fadeIn"
-        data-animation-delay="50"
       >
         #alexfrombkk
       </h2>
       <p
         className={style.text}
-        data-animation="fadeIn"
-        data-animation-delay="55"
       >
         In a single line of code, change the world, we can.
       </p>
@@ -22,9 +18,7 @@ function Main() {
           <a
             href="https://linktr.ee/alexeevxpert"
             target="_blank"
-            data-animation="fadeIn"
-            data-animation-delay="60"
-            data-slide="about"
+            rel="nofollow noopener"
           >
             Linktree
           </a>
@@ -34,9 +28,7 @@ function Main() {
             href="https://t.me/web3siam"
             className={style.btnInverse}
             target="_blank"
-            data-animation="fadeIn"
-            data-animation-delay="60"
-            data-slide="subscribe"
+            rel="nofollow noopener"
           >
             Web3 Siam
           </a>

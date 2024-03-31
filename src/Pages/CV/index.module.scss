@@ -1,8 +1,12 @@
 @import "../../scss/buttons";
 @import "../../scss/sections";
+@import "../../scss/animation";
 
 .cv {
   @extend .section;
+  opacity: 0;
+  animation: fadeIn 1s 0s;
+  animation-fill-mode: forwards;
 }
 
 .title {
@@ -11,4 +15,12 @@
 
 .button {
   @extend .btn;
+
+  &:hover {
+    -webkit-animation: pulse 0.2s linear;
+    -moz-animation: pulse 0.2s linear;
+    -ms-animation: pulse 0.2s linear;
+    -o-animation: pulse 0.2s linear;
+    animation: pulse 0.2s linear;
+  }
 }

@@ -13,7 +13,15 @@ window.requestAnimFrame = (function () {
   );
 })();
 
-function CanvasBg() {
+const colors = {
+  main: "#252525",
+  hack: "#ffffff",
+  cv: "#ffffff",
+  consulting: "#ffffff",
+  donation: "#252525",
+};
+
+function CanvasBg({ page }) {
   // const [curvesArray, setCurvesArray] = useState([]);
   const canvasRef = useRef(null);
 
@@ -113,7 +121,6 @@ function CanvasBg() {
       ctx.clearRect(0, 0, canvas.width, canvas.height);
 
       ctx.lineWidth = 1;
-      ctx.strokeStyle = "";
 
       for (let i = 0; i < curvesArray.length; i++) {
         ctx.beginPath();
@@ -161,15 +168,15 @@ function CanvasBg() {
     return () => window.removeEventListener("resize", awdCanvasResize);
   }, []);
 
+  useEffect(() => {
+    const canvas = canvasRef.current;
+    const ctx = canvas.getContext("2d");
+
+    ctx.strokeStyle = colors[page];
+  }, [page]);
+
   return (
     <div className={style.canvasBg}>
-      <div id="overlay">
-        <div className={style.bgHome}></div>
-        <div className={style.bgHack}></div>
-        <div className={style.bgCv}></div>
-        <div className={style.bgConsulting}></div>
-        <div className={style.bgDonation}></div>
-      </div>
       <canvas ref={canvasRef}></canvas>
     </div>
   );

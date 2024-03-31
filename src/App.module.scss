@@ -4,12 +4,56 @@
   flex-direction: column;
   justify-content: space-between;
   background-color: #ffeb3b;
+  transition: background 0.5s;
+  overflow: hidden;
+
+  &.main {
+    color: #252525;
+    background-color: #ffeb3b;
+
+    a {
+      color: #252525;
+    }
+  }
+  &.hack {
+    color: #ffffff;
+    background-color: #252525;
+
+    a {
+      color: #ffffff;
+    }
+  }
+  &.cv {
+    color: #ffffff;
+    background-color: #f44336;
+
+    a {
+      color: #ffffff;
+    }
+  }
+  &.consulting {
+    color: #ffffff;
+    background-color: #326394;
+
+    a {
+      color: #ffffff;
+    }
+  }
+  &.donation {
+    color: #252525;
+    background-color: #dedede;
+
+    a {
+      color: #252525;
+    }
+  }
 }
 
-.main {
+.mainSection {
   display: flex;
   height: 100%;
   align-items: center;
   justify-content: flex-end;
   padding: 0 40px;
+  z-index: 30;
 }

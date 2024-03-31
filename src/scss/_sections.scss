@@ -11,10 +11,10 @@
   -moz-backface-visibility: hidden;
   -ms-backface-visibility: hidden;
   position: relative;
+  transition: color 0.5s;
 }
 
 .text {
-  color: #252525;
   font-size: 20px;
   line-height: 28px;
   font-family: "Quicksand", sans-serif;
@@ -25,4 +25,10 @@
   overflow-x: hidden;
   white-space: normal;
   text-align: right;
+  margin-bottom: 20px;
+  transition: color 0.5s;
+
+  &:last-child {
+    margin-bottom: 0;
+  }
 }

@@ -5,8 +5,6 @@ function Hack() {
     <div className={style.hack}>
       <h2
         className={style.title}
-        data-animation="fadeIn"
-        data-animation-delay="60"
       >
         hack
       </h2>
@@ -16,10 +14,7 @@ function Hack() {
           <a
             href="https://dragonereum.io/"
             target="_blank"
-            class="btn animated"
-            data-animation="fadeIn"
-            data-animation-delay="60"
-            data-slide="about"
+            rel="nofollow noopener"
           >
             1st place Winner at the 2017 Minsk Blockchain Hackathon, highly
             experienced in web3 development
@@ -29,10 +24,7 @@ function Hack() {
           <a
             href="https://devpost.com/software/chainlink-hackathon-a56phv"
             target="_blank"
-            class="btn animated"
-            data-animation="fadeIn"
-            data-animation-delay="60"
-            data-slide="about"
+            rel="nofollow noopener"
           >
             Awarded $10k from Tencent Cloud at the Chainlink Constellation
             Hackathon 2023
