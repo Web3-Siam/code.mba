@@ -13,7 +13,13 @@
   @media screen and (max-width: 768px) {
     padding: 30px 30px 0;
   }
+  @media screen and (max-height: 768px) {
+    padding: 30px 30px 0;
+  }
   @media screen and (max-width: 420px) {
+    padding: 15px 15px 0;
+  }
+  @media screen and (max-height: 420px) {
     padding: 15px 15px 0;
   }
 
@@ -123,8 +129,8 @@
 
 .dropdownButton {
   display: none;
-  width: 28px;
-  height: 28px;
+  width: 42px;
+  height: 42px;
   background: transparent;
   border: 0;
   cursor: pointer;
@@ -135,13 +141,13 @@
 
   @media screen and (max-width: 768px) {
     display: block;
-    animation: slideInHeader 1s 0.5s;
+    animation: slideInHeader 1s 0s;
   }
 
   &.opened {
     span {
       &:after {
-        width: 30px;
+        width: 42px;
       }
 
       &:first-child {
@@ -174,10 +180,10 @@
     &:after {
       content: "";
       position: absolute;
-      left: 0;
+      left: 2px;
       display: block;
-      width: 24px;
-      height: 3px;
+      width: 36px;
+      height: 4px;
       margin: 4px 2px;
       -webkit-border-radius: 2px;
       -moz-border-radius: 2px;
@@ -196,7 +202,7 @@
 
     &:first-child {
       &:after {
-        top: 0;
+        top: 4px;
         -webkit-transform-origin: 0 50%;
         -moz-transform-origin: 0 50%;
         -ms-transform-origin: 0 50%;
@@ -206,12 +212,12 @@
     }
     &:nth-child(2) {
       &:after {
-        top: 8px;
+        top: 16px;
       }
     }
     &:last-child {
       &:after {
-        top: 16px;
+        top: 28px;
         -webkit-transform-origin: 0 50%;
         -moz-transform-origin: 0 50%;
         -ms-transform-origin: 0 50%;
@@ -226,13 +232,14 @@
   @media screen and (max-width: 768px) {
     position: fixed;
     left: 0;
-    top: -50vh;
+    top: 0;
     width: 100%;
     height: 100vh;
     z-index: 10;
     display: flex;
     align-items: center;
-    transition: top 1s ease-out, opacity 1s ease-out;
+    transition: transform 0.75s ease-out, opacity 0.75s ease-out;
+    transform: scale(0.5);
 
     opacity: 0;
     pointer-events: none;
@@ -240,7 +247,7 @@
 
   &.show {
     @media screen and (max-width: 768px) {
-      top: 0vh;
+      transform: scale(1);
       opacity: 1;
       pointer-events: auto;
     }
@@ -254,6 +261,10 @@
       flex-direction: column;
       width: 100%;
     }
+    @media screen and (max-height: 420px) and (max-width: 768px) {
+      flex-wrap: wrap;
+      flex-direction: row;
+    }
 
     li {
       margin-right: 40px;
@@ -264,6 +275,17 @@
       }
       @media screen and (max-width: 768px) {
         margin-right: 0;
+      }
+      @media screen and (max-height: 420px) and (max-width: 768px) {
+        width: 50%;
+        display: flex;
+        justify-content: center;
+      }
+
+      &:first-child {
+        @media screen and (max-height: 420px) and (max-width: 768px) {
+          width: 100%;
+        }
       }
 
       &:last-child {

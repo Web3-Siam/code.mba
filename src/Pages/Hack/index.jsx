@@ -12,6 +12,7 @@ function Hack() {
             target="_blank"
             rel="nofollow noopener"
           >
+            <i className="fa fa-trophy"></i>&nbsp;
             1st place Winner at the 2017 Minsk Blockchain Hackathon
           </a>
         </li>
@@ -21,6 +22,7 @@ function Hack() {
             target="_blank"
             rel="nofollow noopener"
           >
+            <i className="fa fa-money"></i>&nbsp;
             $10k at the Chainlink Constellation Hackathon 2023
           </a>
         </li>

@@ -20,6 +20,7 @@ function Main() {
             target="_blank"
             rel="nofollow noopener"
           >
+            <i className="fa fa-link"></i>&nbsp;
             Linktree
           </a>
         </li>
@@ -30,6 +31,7 @@ function Main() {
             target="_blank"
             rel="nofollow noopener"
           >
+            <i className="fa fa-paper-plane"></i>&nbsp;
             Web3 Siam
           </a>
         </li>

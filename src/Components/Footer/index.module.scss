@@ -9,9 +9,28 @@
   opacity: 0;
   animation: slideInFooter 1s 0.5s;
   animation-fill-mode: forwards;
+  top: 0;
+  position: relative;
+  transition: top 0.5s ease-out;
 
   @media screen and (max-width: 768px) {
-    display: none;
+    flex-direction: column;
+    padding: 0 30px 30px;
+  }
+  @media screen and (max-width: 420px) {
+    padding: 0 15px 15px;
+  }
+  @media screen and (max-height: 768px) {
+    padding: 0 30px 30px;
+  }
+  @media screen and (max-height: 420px) {
+    padding: 0 15px 15px;
+  }
+
+  &.hide {
+    @media screen and (max-height: 420px) and (max-width: 768px) {
+      top: 100px;
+    }
   }
 
   &.main,
@@ -36,6 +55,11 @@
 }
 
 .copyright {
+  @media screen and (max-width: 768px) {
+    order: 1;
+    margin-top: 10px;
+  }
+
   p {
     font-size: 16px;
     font-weight: bold;
@@ -43,13 +67,25 @@
     letter-spacing: 2px;
     margin-bottom: 0;
     transition: color 0.5s;
+
+    @media screen and (max-width: 768px) {
+      text-align: center;
+    }
   }
 }
 
 .socials {
+  @media screen and (max-width: 420px) {
+    width: 100%;
+  }
+
   ul {
     display: flex;
     align-items: center;
+
+    @media screen and (max-width: 420px) {
+      justify-content: space-between;
+    }
 
     li {
       margin-right: 6px;
@@ -69,6 +105,10 @@
     text-align: center;
     line-height: 30px;
     transition: color 0.5s;
+
+    @media screen and (max-width: 768px) {
+      font-size: 30px;
+    }
 
     &:hover {
       &:before,

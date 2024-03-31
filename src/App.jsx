@@ -39,7 +39,7 @@ function App() {
 
       <main className={`${style.mainSection} ${menuOpen ? style.hidden : ''}`}>{pages[page]}</main>
 
-      <Footer page={page} />
+      <Footer page={page} isMenuOpen={menuOpen} />
     </div>
   );
 }

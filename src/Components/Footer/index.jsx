@@ -1,10 +1,10 @@
 import style from "./index.module.scss";
 
-function Footer({ page }) {
+function Footer({ isMenuOpen, page }) {
   return (
-    <footer className={`${style.footer} ${style[page]}`}>
+    <footer className={`${style.footer} ${style[page]} ${isMenuOpen ? style.hide : ''}`}>
       <div className={style.copyright}>
-        <p>© 2024 code.mba - Alex from Bangkok</p>
+        <p>© 2024 code.mba - Alex&nbsp;from&nbsp;Bangkok</p>
       </div>
       <nav className={style.socials}>
         <ul>
