@@ -11,7 +11,7 @@ function Main() {
       <p
         className={style.text}
       >
-        In a single line of code, change the world, we can.
+        In a single line of code, change&nbsp;the&nbsp;world,&nbsp;we&nbsp;can.
       </p>
       <ul className={style.buttons}>
         <li>

@@ -29,6 +29,10 @@
   li {
     margin-bottom: 20px;
 
+    @media screen and (max-height: 420px) {
+      margin-bottom: 10px;
+    }
+
     &:last-child {
       margin-bottom: 0;
     }

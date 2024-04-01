@@ -17,11 +17,11 @@
     flex-direction: column;
     padding: 0 30px 30px;
   }
-  @media screen and (max-width: 420px) {
-    padding: 0 15px 15px;
-  }
   @media screen and (max-height: 768px) {
     padding: 0 30px 30px;
+  }
+  @media screen and (max-width: 420px) {
+    padding: 0 15px 15px;
   }
   @media screen and (max-height: 420px) {
     padding: 0 15px 15px;
@@ -36,6 +36,10 @@
   &.main,
   &.donation {
     .socials a {
+      @media screen and (max-width: 420px) {
+        border-color: #252525;
+      }
+      
       &:before,
       &:after {
         background: #252525;
@@ -46,6 +50,9 @@
   &.cv,
   &.consulting {
     .socials a {
+      @media screen and (max-width: 420px) {
+        border-color: #ffffff;
+      }
       &:before,
       &:after {
         background: #ffffff;
@@ -57,7 +64,10 @@
 .copyright {
   @media screen and (max-width: 768px) {
     order: 1;
-    margin-top: 10px;
+    margin-top: 42px;
+  }
+  @media screen and (max-height: 420px) {
+    margin-top: 20px;
   }
 
   p {
@@ -84,11 +94,11 @@
     align-items: center;
 
     @media screen and (max-width: 420px) {
-      justify-content: space-between;
+      justify-content: center;
     }
 
     li {
-      margin-right: 6px;
+      margin-right: 20px;
 
       &:last-child {
         margin-right: 0;
@@ -104,10 +114,18 @@
     height: 30px;
     text-align: center;
     line-height: 30px;
-    transition: color 0.5s;
+    transition: color 0.5s, border-color 0.5s;
 
     @media screen and (max-width: 768px) {
       font-size: 30px;
+    }
+    @media screen and (max-width: 420px) {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border: solid 2px #252525;
+      border-radius: 50%;
+      height: 50px;
     }
 
     &:hover {
