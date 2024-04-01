@@ -25,8 +25,19 @@
   display: flex;
   align-items: center;
 
+  @media screen and (max-width: 420px) {
+    flex-direction: column;
+    width: 100%;
+  }
+
   li {
     margin-right: 6px;
+
+    @media screen and (max-width: 420px) {
+      margin-right: 0;
+      margin-bottom: 10px;
+      width: 100%;
+    }
 
     &:last-child {
       margin-right: 0;
@@ -34,6 +45,10 @@
 
     a {
       @extend .btn !optional;
+
+      @media screen and (max-width: 420px) {
+        text-align: center;
+      }
 
       &.btnInverse {
         background-color: #252525;

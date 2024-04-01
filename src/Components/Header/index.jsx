@@ -3,21 +3,27 @@ import { useEffect, useState } from "react";
 import style from "./index.module.scss";
 
 function Header({ isMenuOpen, handleMenu, page, handleClick }) {
-  const [randomIcon, setRandomIcon] = useState("fa-eye");
+  const [randomIconFirst, setRandomIconFirst] = useState("fa-code");
+  const [randomIconSecond, setRandomIconSecond] = useState("fa-eye");
   const randomIcons = ["fa-eye", "fa-times", "fa-clock-o"],
     maxRandomIcons = randomIcons.length;
 
   useEffect(() => {
-    setRandomIcon(randomIcons[Math.floor(maxRandomIcons * Math.random())]);
+    setRandomIconSecond(randomIcons[Math.floor(maxRandomIcons * Math.random())]);
   }, []);
+
+  const handleRandom = () => {
+    setRandomIconFirst(randomIcons[Math.floor(maxRandomIcons * Math.random())]);
+    setRandomIconSecond(randomIcons[Math.floor(maxRandomIcons * Math.random())]);
+  }
 
   return (
     <header className={`${style.header} ${style[page]}`}>
-      <div className={style.logo}>
+      <div className={style.logo} onClick={handleRandom}>
         <h1>
-          <i className="fa fa-code"></i>&nbsp;
+          <i className={`fa ${randomIconFirst}`}></i>&nbsp;
           <span>
-            code <i className={`fa ${randomIcon}`}></i> mba
+            code <i className={`fa ${randomIconSecond}`}></i> mba
           </span>
         </h1>
       </div>
