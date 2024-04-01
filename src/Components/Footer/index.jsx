@@ -1,10 +1,10 @@
 import style from "./index.module.scss";
 
-function Footer({ page }) {
+function Footer({ isMenuOpen, page }) {
   return (
-    <footer className={`${style.footer} ${style[page]}`}>
+    <footer className={`${style.footer} ${style[page]} ${isMenuOpen ? style.hide : ''}`}>
       <div className={style.copyright}>
-        <p>© 2024 code.mba - Alex from Bangkok</p>
+        <p>© 2024 code.mba - Alex&nbsp;from&nbsp;Bangkok</p>
       </div>
       <nav className={style.socials}>
         <ul>
@@ -14,7 +14,7 @@ function Footer({ page }) {
               target="_blank"
               rel="nofollow noopener"
             >
-              <i class="fa fa-twitter"></i>
+              <i className="fa fa-twitter"></i>
             </a>
           </li>
           <li>
@@ -23,7 +23,7 @@ function Footer({ page }) {
               target="_blank"
               rel="nofollow noopener"
             >
-              <i class="fa fa-linkedin"></i>
+              <i className="fa fa-linkedin"></i>
             </a>
           </li>
           <li>
@@ -32,7 +32,7 @@ function Footer({ page }) {
               target="_blank"
               rel="nofollow noopener"
             >
-              <i class="fa fa-github"></i>
+              <i className="fa fa-github"></i>
             </a>
           </li>
           <li>
@@ -41,7 +41,7 @@ function Footer({ page }) {
               target="_blank"
               rel="nofollow noopener"
             >
-              <i class="fa fa-instagram"></i>
+              <i className="fa fa-instagram"></i>
             </a>
           </li>
         </ul>

@@ -32,14 +32,6 @@ function CanvasBg({ page }) {
     const canvas = canvasRef.current;
     const ctx = canvas.getContext("2d");
 
-    function awdCanvasResize() {
-      canvas.width = window.innerWidth;
-      canvas.height = window.innerHeight;
-    }
-
-    awdCanvasResize();
-    window.addEventListener("resize", awdCanvasResize);
-
     awdCanvas();
     function curve(
       abc1x,
@@ -164,15 +156,24 @@ function CanvasBg({ page }) {
       awdCanvasInit();
       awdCanvasDraw();
     }
-
-    return () => window.removeEventListener("resize", awdCanvasResize);
   }, []);
 
   useEffect(() => {
     const canvas = canvasRef.current;
     const ctx = canvas.getContext("2d");
 
-    ctx.strokeStyle = colors[page];
+    function awdCanvasResize() {
+      canvas.width = window.innerWidth;
+      canvas.height = window.innerHeight;
+      canvas.style.width = "100%";
+      canvas.style.height = "100%";
+      ctx.strokeStyle = colors[page];
+    }
+
+    awdCanvasResize();
+    window.addEventListener("resize", awdCanvasResize);
+
+    return () => window.removeEventListener("resize", awdCanvasResize);
   }, [page]);
 
   return (

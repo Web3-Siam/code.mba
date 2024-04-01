@@ -13,6 +13,7 @@ import Footer from "./Components/Footer";
 
 function App() {
   const [page, setPage] = useState("main");
+  const [menuOpen, setMenuOpen] = useState(false);
 
   const pages = {
     main: <Main />,
@@ -26,15 +27,19 @@ function App() {
     setPage(newPage);
   };
 
+  const handleMenu = (boolean) => {
+    setMenuOpen(boolean);
+  }
+
   return (
     <div className={`${style.app} ${style[page]}`}>
       <CanvasBg page={page} />
 
-      <Header page={page} handleClick={handleChange} />
+      <Header isMenuOpen={menuOpen} handleMenu={handleMenu} page={page} handleClick={handleChange} />
 
-      <main className={style.mainSection}>{pages[page]}</main>
+      <main className={`${style.mainSection} ${menuOpen ? style.hidden : ''}`}>{pages[page]}</main>
 
-      <Footer page={page} />
+      <Footer page={page} isMenuOpen={menuOpen} />
     </div>
   );
 }

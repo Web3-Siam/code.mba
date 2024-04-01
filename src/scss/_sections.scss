@@ -12,6 +12,13 @@
   -ms-backface-visibility: hidden;
   position: relative;
   transition: color 0.5s;
+
+  @media screen and (max-width: 420px) {
+    margin-bottom: 20px;
+  }
+  @media screen and (max-height: 420px) {
+    margin-bottom: 20px;
+  }
 }
 
 .text {
@@ -27,6 +34,16 @@
   text-align: right;
   margin-bottom: 20px;
   transition: color 0.5s;
+
+  @media screen and (max-width: 768px) {
+    text-align: center;
+  }
+  @media screen and (max-width: 420px) {
+    margin-bottom: 10px;
+  }
+  @media screen and (max-height: 420px) {
+    margin-bottom: 10px;
+  }
 
   &:last-child {
     margin-bottom: 0;

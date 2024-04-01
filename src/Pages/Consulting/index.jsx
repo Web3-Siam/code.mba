@@ -10,7 +10,7 @@ function Consulting() {
       <p
         className={style.text}
       >
-        I offer Consultations Starting at 5000 Thai Baht or $150,<br/> leveraging my
+        I offer Consultations Starting at 5000 Thai Baht or $150,<br className={style.brHide}/> leveraging my
         expertise as a top-notch Executive in Web3.
       </p>
     </div>

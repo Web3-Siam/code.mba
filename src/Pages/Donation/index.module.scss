@@ -6,6 +6,10 @@
   opacity: 0;
   animation: fadeIn 1s 0s;
   animation-fill-mode: forwards;
+
+  @media screen and (max-width: 991px) {
+    align-items: center;
+  }
 }
 
 .title {
@@ -19,9 +23,18 @@
 
   strong {
     font-weight: 700;
+    word-break: break-all;
+    position: relative;
+    margin-left: 10px;
   }
 }
 
 .qrCode {
   max-width: 100%;
+  max-height: 30vh;
+  margin-bottom: 20px;
+
+  @media screen and (max-height: 439px) {
+    max-height: 20vh;
+  }
 }

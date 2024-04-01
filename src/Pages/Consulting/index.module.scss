@@ -7,6 +7,10 @@
   opacity: 0;
   animation: fadeIn 1s 0s;
   animation-fill-mode: forwards;
+
+  @media screen and (max-width: 991px) {
+    align-items: center;
+  }
 }
 
 .title {
@@ -15,4 +19,10 @@
 
 .text {
   @extend .text;
+}
+
+.brHide {
+  @media screen and (max-width: 619px) {
+    display: none;
+  }
 }
