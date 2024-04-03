@@ -3,10 +3,11 @@ import ReactGA from "react-ga4";
 import style from "./index.module.scss";
 
 function Main() {
-  const handleClick = () => {
+  const handleClick = (label) => {
     ReactGA.event({
       category: "external link",
       action: "click",
+      label
     });
   };
 
@@ -22,7 +23,7 @@ function Main() {
             href="https://linktr.ee/alexeevxpert"
             target="_blank"
             rel="nofollow noopener"
-            onClick={handleClick}
+            onClick={() => handleClick('Linktree')}
           >
             <i className="fa fa-link"></i>&nbsp; Linktree
           </a>
@@ -33,7 +34,7 @@ function Main() {
             className={style.btnInverse}
             target="_blank"
             rel="nofollow noopener"
-            onClick={handleClick}
+            onClick={() => handleClick('Telegram')}
           >
             <i className="fa fa-paper-plane"></i>&nbsp; Web3 Siam
           </a>

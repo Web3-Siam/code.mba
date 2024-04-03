@@ -31,6 +31,12 @@ function App() {
 
   const handleChange = (newPage) => {
     setPage(newPage);
+
+    ReactGA.event({
+      category: "menu",
+      action: "click",
+      label: newPage
+    });
   };
 
   const handleMenu = (boolean) => {
