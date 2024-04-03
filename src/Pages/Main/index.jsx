@@ -1,16 +1,19 @@
+import ReactGA from "react-ga4";
+
 import style from "./index.module.scss";
 
 function Main() {
+  const handleClick = () => {
+    ReactGA.event({
+      category: "external link",
+      action: "click",
+    });
+  };
+
   return (
     <div className={style.main}>
-      <h2
-        className={style.title}
-      >
-        #alexfrombkk
-      </h2>
-      <p
-        className={style.text}
-      >
+      <h2 className={style.title}>#alexfrombkk</h2>
+      <p className={style.text}>
         In a single line of code, change&nbsp;the&nbsp;world,&nbsp;we&nbsp;can.
       </p>
       <ul className={style.buttons}>
@@ -19,9 +22,9 @@ function Main() {
             href="https://linktr.ee/alexeevxpert"
             target="_blank"
             rel="nofollow noopener"
+            onClick={handleClick}
           >
-            <i className="fa fa-link"></i>&nbsp;
-            Linktree
+            <i className="fa fa-link"></i>&nbsp; Linktree
           </a>
         </li>
         <li>
@@ -30,9 +33,9 @@ function Main() {
             className={style.btnInverse}
             target="_blank"
             rel="nofollow noopener"
+            onClick={handleClick}
           >
-            <i className="fa fa-paper-plane"></i>&nbsp;
-            Web3 Siam
+            <i className="fa fa-paper-plane"></i>&nbsp; Web3 Siam
           </a>
         </li>
       </ul>
