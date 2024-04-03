@@ -246,6 +246,9 @@
     display: none;
     align-items: center;
     pointer-events: none;
+    transition: transform 0.5s ease, opacity 0.5s ease;
+    opacity: 0;
+    transform: scale(0.1);
 
     @media screen and (max-width: 768px) {
       display: flex;
@@ -254,21 +257,8 @@
     &.show {
       @media screen and (max-width: 768px) {
         pointer-events: auto;
-      }
-
-      ul {
-        li {
-          opacity: 1;
-          transform: scale(1);
-        }
-      }
-    }
-
-    ul {
-      li {
-        transition: transform 0.5s ease, opacity 0.5s ease;
-        opacity: 0;
-        transform: scale(0.1);
+        opacity: 1;
+        transform: scale(1);
       }
     }
   }
