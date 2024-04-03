@@ -109,7 +109,7 @@
 .logo {
   z-index: 20;
   cursor: pointer;
-  
+
   h1 {
     font-family: "Quicksand", sans-serif;
     text-transform: lowercase;
@@ -231,27 +231,45 @@
 }
 
 .navigation {
-  @media screen and (max-width: 768px) {
+  &.desktop {
+    @media screen and (max-width: 768px) {
+      display: none;
+    }
+  }
+  &.mobile {
     position: fixed;
     left: 0;
     top: 0;
     width: 100%;
     height: 100vh;
     z-index: 10;
-    display: flex;
+    display: none;
     align-items: center;
-    transition: transform 0.75s ease-out, opacity 0.75s ease-out;
-    transform: scale(0.5);
-
-    opacity: 0;
     pointer-events: none;
-  }
 
-  &.show {
     @media screen and (max-width: 768px) {
-      transform: scale(1);
-      opacity: 1;
-      pointer-events: auto;
+      display: flex;
+    }
+
+    &.show {
+      @media screen and (max-width: 768px) {
+        pointer-events: auto;
+      }
+
+      ul {
+        li {
+          opacity: 1;
+          transform: scale(1);
+        }
+      }
+    }
+
+    ul {
+      li {
+        transition: transform 0.5s ease, opacity 0.5s ease;
+        opacity: 0;
+        transform: scale(0.1);
+      }
     }
   }
 
